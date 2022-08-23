@@ -33,7 +33,7 @@ class _filacolState extends State<filacol> {
         appBar: AppBar(
           title: Text(titulo),
         ),
-        body: nombre()
+        body: fondo()
 
         /*Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -59,16 +59,14 @@ class _filacolState extends State<filacol> {
 
 Widget fondo() {
   return Container(
+    decoration: BoxDecoration(
+        image: DecorationImage(
+            fit: BoxFit.fill,
+            image: NetworkImage(
+                "https://nebulae-assets.s3.amazonaws.com/3b56d17152bd46c295797a7eaab1f244.jpg"))),
     child: Center(
-      child: RotatedBox(
-        quarterTurns: 0,
-        child: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                      "https://nebulae-assets.s3.amazonaws.com/3b56d17152bd46c295797a7eaab1f244.jpg"))),
-        ),
+      child: Column(
+        children: <Widget>[nombre()],
       ),
     ),
   );
